@@ -1,26 +1,60 @@
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 100vh;
-  margin: 1px;
-  background-color: #000000
+  background-color: #000000;
+}
+
+.upper-content {
+  display: flex;
+  justify-content: center;
+  /* Centers elements horizontally */
+  align-items: center;
+  /* Aligns elements vertically */
+  padding-top: 25px;
+  /* Adds 50px padding from the top */
+  gap: 25px;
+  /* Adds 50px space between the text and the image */
 }
 
 .upper-left-text {
-  margin-top: 50px;
-  margin-left: 50px;
   font-size: 4rem;
   font-weight: 200;
-  color: #f0f0f0
+  color: #f0f0f0;
 }
 
 img {
   width: 200px;
   height: 200px;
   display: block;
-  margin-left: 20px;
 }
+
+.button1_signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Centers the button vertically */
+  width: 100vw;
+  /* Full width of the viewport */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3700b3;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -52,6 +86,7 @@ img {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
