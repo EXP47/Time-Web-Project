@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'SF Pro';
+  src: url('TypographyTies.ttf') format('truetype');
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -9,55 +14,82 @@
 
 .upper-content {
   display: flex;
-  justify-content: center;
-  /* Centers elements horizontally */
+  flex-direction: column;
   align-items: center;
-  /* Aligns elements vertically */
-  padding-top: 25px;
-  /* Adds 50px padding from the top */
-  gap: 25px;
-  /* Adds 50px space between the text and the image */
+  padding-top: 81.25px;
+  /* Increased by 25% + 50px padding */
+  gap: 31.25px;
+  /* Increased by 25% */
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
-.upper-left-text {
-  font-size: 4rem;
-  font-weight: 200;
+.upper-top-text {
+  font-size: 5rem;
+  /* Increased by 25% */
+
   color: #f0f0f0;
+  font-family: 'TypographyTies', sans-serif;
+  /* Apply the new font */
 }
 
 img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  /* Increased by 25% */
+  height: 250px;
+  /* Increased by 25% */
   display: block;
 }
 
-.button1_signin {
+.input-button-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  /* Centers the button vertically */
-  width: 100vw;
-  /* Full width of the viewport */
+  gap: 18.75px;
+  /* Increased by 25% */
+  margin-top: 350px;
+  /* Adjusted to place below the upper content */
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 1rem;
+.custom-text-field .MuiOutlinedInput-root {
+  border: 1px solid white;
+  border-radius: 25px;
+  /* Increased by 25% */
+  color: white;
+}
+
+.custom-text-field .MuiInputLabel-outlined {
+  color: white;
+}
+
+.custom-text-field .MuiOutlinedInput-notchedOutline {
+  border-color: white;
+}
+
+.custom-text-field .MuiOutlinedInput-input {
+  color: white;
+}
+
+.custom-button {
+  padding: 25px 37.5px;
+  /* Increased by 25% */
+  font-size: 1.25rem;
+  /* Increased by 25% */
   background-color: #6200ea;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
+  /* Increased by 25% */
   cursor: pointer;
 }
 
-button:hover {
+.custom-button:hover {
   background-color: #3700b3;
 }
 
-
 .App-logo {
-  height: 40vmin;
+  height: 50vmin;
+  /* Increased by 25% */
   pointer-events: none;
 }
 
@@ -74,7 +106,8 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12.5px + 2.5vmin);
+  /* Increased by 25% */
   color: white;
 }
 
