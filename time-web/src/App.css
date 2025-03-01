@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SF Pro';
-  src: url('TypographyTies.ttf') format('truetype');
+  src: url('SF-Pro.ttf') format('truetype');
 }
 
 .App {
@@ -14,8 +14,11 @@
 
 .upper-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  /* Changed to row to place elements next to each other */
   align-items: center;
+  justify-content: center;
+  /* Center elements horizontally */
   padding-top: 81.25px;
   /* Increased by 25% + 50px padding */
   gap: 31.25px;
@@ -28,10 +31,11 @@
 .upper-top-text {
   font-size: 5rem;
   /* Increased by 25% */
-
+  font-weight: 700;
   color: #f0f0f0;
-  font-family: 'TypographyTies', sans-serif;
+  font-family: 'SF Pro', sans-serif;
   /* Apply the new font */
+  text-align: center;
 }
 
 img {
@@ -47,8 +51,6 @@ img {
   align-items: center;
   gap: 18.75px;
   /* Increased by 25% */
-  margin-top: 350px;
-  /* Adjusted to place below the upper content */
 }
 
 .custom-text-field .MuiOutlinedInput-root {
