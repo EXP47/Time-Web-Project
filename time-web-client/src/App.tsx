@@ -23,6 +23,10 @@ function App() {
     setInputValue(event.target.value);
   };
 
+  const handleButtonClick = () => {
+    console.log("Button clicked");
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline /> {/* Normalizes styles */}
@@ -47,6 +51,15 @@ function App() {
       </div>
     </ThemeProvider>
   );
+}
+
+function calender(){
+  return(
+    <div>
+      <h1>Calender</h1>
+      <p>Here you can see the calender</p>
+    </div>
+  )
 }
 
 export default App;
