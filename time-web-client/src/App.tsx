@@ -1,31 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import TestButton from "./TestButton";
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
+import CalendarInterface from "./CalendarInterface";
 
 const theme = createTheme();
 
-
 function App() {
   const [inputValue, setInputValue] = useState("");
-  const [backendData, setBackendData] = useState([({})]);
-
-  useEffect(() => {
-    fetch("/api").then(
-      response => response.json()).then(data => setBackendData(data));
-  }, []);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
+  const navigate = useNavigate();
+
   const handleButtonClick = () => {
-    console.log("Button clicked");
-  }
+    console.log("Button clicked", inputValue);
+    alert("Text Box:" + " " + inputValue);
+    navigate("/calendar"); // Navigate to the CalendarInterface component
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -44,7 +46,9 @@ function App() {
               onChange={handleInputChange}
               className="custom-text-field"
             />
-            <button className="custom-button">Link MAL</button>
+            <button className="custom-button" onClick={handleButtonClick}>
+              Link MAL
+            </button>
           </div>
           <div className="description"></div>
         </div>
@@ -53,13 +57,15 @@ function App() {
   );
 }
 
-function calender(){
-  return(
-    <div>
-      <h1>Calender</h1>
-      <p>Here you can see the calender</p>
-    </div>
-  )
+function AppWrapper() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/calendar" element={<CalendarInterface />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App;
+export default AppWrapper;
