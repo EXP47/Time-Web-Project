@@ -11,6 +11,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import CalendarInterface from "./CalendarInterface";
+import DayInterface from "./DayInterface";
 
 const theme = createTheme();
 
@@ -26,7 +27,7 @@ function App() {
   const handleButtonClick = () => {
     console.log("Button clicked", inputValue);
     alert("Text Box:" + " " + inputValue);
-    navigate("/calendar"); // Navigate to the CalendarInterface component
+    navigate("/day", { state: { inputValue }}); // Navigate to the CalendarInterface component
   };
 
   return (
@@ -62,7 +63,7 @@ function AppWrapper() {
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/calendar" element={<CalendarInterface />} />
+        <Route path="/day" element={<DayInterface />} />
       </Routes>
     </Router>
   );

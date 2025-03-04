@@ -53,32 +53,35 @@
 }
 
 .custom-calendar {
+  width: 700px; /* Increased width */
+  max-width: 100%;
+  height: auto; /* Adjust height automatically */
   background: black !important;
   color: #f0f0f0 !important;
   font-family: 'SF Pro', sans-serif;
-  border-radius: 10px; /* Apply border radius to the entire calendar */
+  border-radius: 20px; /* Increased border radius by 10px */
 }
 
 .custom-calendar .react-calendar__tile {
   color: #f0f0f0 !important;
-  border-radius: 10px; /* Apply border radius to tiles */
+  border-radius: 20px; /* Increased border radius by 10px */
 }
 
 .custom-calendar .react-calendar__tile:hover {
   background-color: #9370DB !important; /* Medium Purple */
-  border-radius: 10px; /* Apply border radius to tiles on hover */
+  border-radius: 20px; /* Increased border radius by 10px */
 }
 
 .custom-calendar .react-calendar__tile--now {
   background-color: #f88fd8 !important; /* Highlight current day */
   color: #000000 !important; /* Optional: Change text color for better contrast */
-  border-radius: 10px; /* Apply border radius to current day tile */
+  border-radius: 20px; /* Increased border radius by 10px */
 }
 
 .custom-calendar .react-calendar__tile--active {
   background-color: #4b0082 !important; /* Dark Purple */
   color: white !important;
-  border-radius: 10px; /* Apply border radius to active tile */
+  border-radius: 20px; /* Increased border radius by 10px */
 }
 
 .custom-calendar .react-calendar__tile--active:enabled:hover,
@@ -88,7 +91,7 @@
 
 .custom-calendar .react-calendar__navigation button {
   color: #f0f0f0 !important;
-  border-radius: 10px; /* Apply border radius to navigation buttons */
+  border-radius: 20px; /* Increased border radius by 10px */
 }
 
 .custom-calendar .react-calendar__navigation button:hover {
@@ -106,7 +109,7 @@
 .custom-calendar .react-calendar__century-view__decades__decade--active {
   background-color: #4b0082 !important; /* Dark Purple */
   color: white !important;
-  border-radius: 10px; /* Apply border radius to active tile */
+  border-radius: 20px; /* Increased border radius by 10px */
 }
 
 img {
@@ -135,8 +138,7 @@ img {
 
 .custom-text-field .MuiOutlinedInput-root {
   border: 1px solid white;
-  border-radius: 25px;
-  /* Increased by 25% */
+  border-radius: 35px; /* Increased border radius by 10px */
   color: white;
 }
 
@@ -159,8 +161,7 @@ img {
   /* Increased by 25% */
   background-color: #9370DB;
   border: none;
-  border-radius: 25px;
-  /* Increased by 25% */
+  border-radius: 35px; /* Increased border radius by 10px */
   cursor: pointer;
 }
 

@@ -3,13 +3,22 @@
   src: url('SF-Pro.ttf') format('truetype');
 }
 
+.DayInterface {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: black
+  background-color: black;
 }
 
 .upper-content {
@@ -26,7 +35,6 @@
   position: absolute;
   top: 0;
   width: 100%;
-
 }
 
 .middle-content {
@@ -39,8 +47,7 @@
   position: absolute;
   top: 50%;
   width: 100%;
-  
-  
+  background-color: black;
 }
 
 .upper-top-text {
@@ -57,7 +64,6 @@ img {
   width: 250px;
   /* Increased by 25% */
   height: 250px;
- 
   /* Increased by 25% */
   display: block;
 }
@@ -67,7 +73,7 @@ img {
   align-items: center;
   gap: 18.75px;
   /* Increased by 25% */
-  color:#6200ea;
+  color: #6200ea;
 }
 
 .description {
@@ -151,4 +157,20 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+
+.rounded-rectangle {
+  width: 550px;
+  height: 350px;
+  background-color: black; /* Purple background */
+  border-color:#f0f0f0;
+
+ border: 5px solid white; /* White border */
+  border-radius: 25px; /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'SF Pro', sans-serif;
+  text-align: center;
 }
