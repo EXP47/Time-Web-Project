@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -10,8 +8,9 @@ import {
   Routes,
   useNavigate,
 } from "react-router-dom";
-import CalendarInterface from "./CalendarInterface";
 import DayInterface from "./DayInterface";
+import axios from "axios";
+import "./App.css";
 
 const theme = createTheme();
 
@@ -24,10 +23,20 @@ function App() {
 
   const navigate = useNavigate();
 
-  const handleButtonClick = () => {
+  const handleButtonClick = async () => {
     console.log("Button clicked", inputValue);
     alert("Text Box:" + " " + inputValue);
-    navigate("/day", { state: { inputValue }}); // Navigate to the CalendarInterface component
+
+    try {
+      const response = await axios.post("http://localhost:5000/scrapBlogs", {
+        username: inputValue,
+      });
+      const { results, file_content } = response.data;
+      console.log("Response data:", results, file_content); // Log the response data
+      navigate("/day", { state: { inputValue, results, file_content } });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   return (

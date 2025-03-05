@@ -3,12 +3,20 @@
   src: url('SF-Pro.ttf') format('truetype');
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black; /* Ensure the background is black */
+  color: white; /* Ensure text color is white */
+}
+
 .DayInterface {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
   background-color: black;
 }
 
@@ -17,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
   background-color: black;
 }
 

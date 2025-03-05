@@ -1,20 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
 import "react-calendar/dist/Calendar.css";
 import "./DayInterface.css";
+import { collapseWhiteSpace } from "collapse-white-space";
 
 const theme = createTheme();
 
+interface DataItem {
+  text: string;
+}
+
 const DayInterface = () => {
   const location = useLocation();
-  const { inputValue } = location.state || { inputValue: "" };
-  const [selectedDate, setSelectedDate] = useState<Date | [Date, Date] | null>(
-    null
-  );
-
+  const {
+    inputValue,
+    results = [],
+    file_content = "",
+  } = location.state || {
+    inputValue: "",
+    results: [],
+    file_content: "",
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -27,7 +35,15 @@ const DayInterface = () => {
         <div className="middle-content">
           <div className="rounded-rectangle">
             <p>Input Value: {inputValue}</p>
-
+            <ul>
+              {results.map((item: DataItem, index: number) => (
+                <li key={index}>{item.text}</li>
+              ))}
+            </ul>
+            <div className="file-content">
+              <h3>File Content:</h3>
+              <pre>{collapseWhiteSpace(file_content)}</pre>
+            </div>
           </div>
         </div>
       </div>
